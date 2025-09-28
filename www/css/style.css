@@ -1,0 +1,149 @@
+:root {
+  --accent:#ef5350;
+  --yellow:#ffcb05;
+  --bg-gradient: linear-gradient(135deg, #ffcb05 0%, #ef5350 100%);
+}
+
+* { box-sizing:border-box; }
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  margin:0;
+  background: var(--bg-gradient);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  color:#222;
+}
+
+header {
+  background: rgba(0,0,0,0.2);
+  color: #fff;
+  text-align: center;
+  padding: 16px;
+  border-bottom: 2px solid rgba(255,255,255,0.3);
+}
+
+header h1 {
+  margin:0;
+  font-size: 26px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+main {
+  flex:1;
+  padding:16px;
+  max-width:480px;
+  margin:0 auto;
+  width:100%;
+}
+
+.page { margin-top:16px; }
+.hidden { display:none; }
+
+.logo {
+  width:120px;
+  display:block;
+  margin:0 auto 12px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  padding:20px;
+  border-radius:16px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.15);
+  animation: fadeIn 0.5s ease;
+}
+
+.btn-group {
+  display:flex;
+  gap:10px;
+  margin-top:14px;
+  flex-wrap:wrap;
+}
+
+button {
+  flex:1;
+  padding:12px;
+  border-radius:10px;
+  border:0;
+  background: var(--accent);
+  color:#fff;
+  font-weight:600;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover {
+  background:#d32f2f;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+input[type="text"], input[type="search"] {
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:2px solid var(--accent);
+  font-size:15px;
+  margin-top:10px;
+}
+
+.topbar {
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap:10px;
+  margin-bottom:12px;
+}
+
+#progress {
+  font-weight:700;
+  background: var(--yellow);
+  padding:6px 10px;
+  border-radius:8px;
+}
+
+#pkmCanvas {
+  display:block;
+  margin:10px auto;
+  border-radius:12px;
+  background:#eee;
+  width:280px;
+  height:280px;
+}
+
+.message {
+  margin-top:8px;
+  font-weight:600;
+}
+
+.hint {
+  font-size:12px;
+  color:#666;
+  margin-top:6px;
+}
+
+ol#leader-list {
+  padding-left:18px;
+}
+
+footer {
+  padding:12px;
+  text-align:center;
+  font-size:12px;
+  color:#fff;
+  opacity:0.8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity:0; transform:translateY(20px);}
+  to { opacity:1; transform:translateY(0);}
+}

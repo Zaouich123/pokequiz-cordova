@@ -1,0 +1,21 @@
+:root { --accent:#ffcb05; --bg:#f6f6f8; --card:#ffffff; --text:#222; }
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; margin:0; background:var(--bg); color:var(--text)}
+header{background:#ef5350;color:#fff;padding:14px}
+header h1{margin:0;font-size:20px}
+main{padding:16px; max-width:480px; margin:0 auto}
+.page{margin-top:16px}
+.hidden{display:none}
+.logo{width:120px;display:block;margin:0 auto 12px}
+.card{background:var(--card); padding:14px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+.btn-group{display:flex; gap:8px; margin-top:12px}
+button{flex:1;padding:10px;border-radius:8px;border:0;background:var(--accent);font-weight:600}
+button:active{transform:translateY(1px)}
+input[type="text"], input[type="search"]{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;margin-top:10px}
+.topbar{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+#pkmCanvas{display:block;margin:10px auto;border-radius:12px;background:#eee; width:280px; height:280px}
+.message{margin-top:8px;font-weight:600}
+.hint{font-size:12px;color:#666;margin-top:6px}
+ol#leader-list{padding-left:18px}
+footer{padding:12px;text-align:center;font-size:12px;color:#666}
+@media(min-width:600px){ main{padding:24px} }

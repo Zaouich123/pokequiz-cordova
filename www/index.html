@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PokeQuiz - TP1</title>
+
+    <!-- CSP -->
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self' data: gap: https://tyradex.vercel.app https://* 'unsafe-inline' 'unsafe-eval';
+             img-src * data:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:;">
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header>
+    <h1>PokeQuiz</h1>
+</header>
+
+<main id="app">
+    <!-- Home -->
+    <section id="home" class="page">
+        <img src="assets/logo.png" alt="logo" class="logo" />
+        <h2>Bienvenue</h2>
+        <p>Devine le Pokémon en noir & blanc !</p>
+        <div class="btn-group">
+            <button id="btn-start">Jouer (10 questions)</button>
+            <button id="btn-board">Classement</button>
+        </div>
+    </section>
+
+    <!-- Quiz -->
+    <section id="quiz" class="page hidden">
+        <div class="topbar">
+            <button id="btn-back-home">← Accueil</button>
+            <div id="progress">Question <span id="q-index">0</span>/10</div>
+        </div>
+
+        <div class="card">
+            <canvas id="pkmCanvas" width="300" height="300"></canvas>
+            <div id="hint" class="hint">Tape le nom du Pokémon</div>
+            <input id="answer" type="text" placeholder="Nom du Pokémon" autocomplete="off"/>
+            <div class="btn-group">
+                <button id="btn-submit">Valider</button>
+            </div>
+            <div id="message" class="message"></div>
+        </div>
+    </section>
+
+    <!-- Result -->
+    <section id="result" class="page hidden">
+        <div class="card">
+            <h2>Résultat final</h2>
+            <p>Ton score : <span id="final-score"></span>/10</p>
+            <p>Temps : <span id="final-time"></span> secondes</p>
+
+            <label for="player-name">Entre ton pseudo :</label>
+            <input id="player-name" placeholder="Ton nom" />
+
+            <div class="btn-group">
+                <button id="btn-save-score">Sauvegarder & voir le classement</button>
+                <button id="btn-play-again">Rejouer</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboard -->
+    <section id="board" class="page hidden">
+        <div class="topbar">
+            <button id="btn-back-home-2">← Accueil</button>
+            <h2>Top 5</h2>
+        </div>
+        <div class="card">
+            <ol id="leader-list"></ol>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <small>TP1 — Application Hybride Cordova — Utilise TyraDex API</small>
+</footer>
+
+<script src="js/storage.js" defer></script>
+<script src="js/app.js" defer></script>
+</body>
+</html>
